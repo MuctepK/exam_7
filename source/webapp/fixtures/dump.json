@@ -1,0 +1,156 @@
+[
+{
+  "model": "webapp.poll",
+  "pk": 1,
+  "fields": {
+    "question": "\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u0432\u0430\u043c \u043b\u0435\u0442?",
+    "created_at": "2019-10-19T05:51:06.788Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 2,
+  "fields": {
+    "question": "\u041a\u0435\u043c \u0432\u044b \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442\u0435?",
+    "created_at": "2019-10-19T05:51:23.794Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 3,
+  "fields": {
+    "question": "\u0412\u0430\u0448\u0435 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u0435 \u043a \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0435?",
+    "created_at": "2019-10-19T05:51:41.530Z"
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 1,
+  "fields": {
+    "answer": "\u041c\u0435\u043d\u044c\u0448\u0435 13",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 2,
+  "fields": {
+    "answer": "13-18",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 3,
+  "fields": {
+    "answer": "18-35",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 4,
+  "fields": {
+    "answer": "35-59",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 5,
+  "fields": {
+    "answer": "60 \u0438 \u0441\u0442\u0430\u0440\u0448\u0435",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 6,
+  "fields": {
+    "answer": "\u0428\u043a\u043e\u043b\u044c\u043d\u0438\u043a",
+    "poll": 2
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 7,
+  "fields": {
+    "answer": "\u0421\u0442\u0443\u0434\u0435\u043d\u0442",
+    "poll": 2
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 8,
+  "fields": {
+    "answer": "\u0418\u043d\u0436\u0435\u043d\u0435\u0440",
+    "poll": 2
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 9,
+  "fields": {
+    "answer": "\u0412\u043e\u0434\u0438\u0442\u0435\u043b\u044c",
+    "poll": 2
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 10,
+  "fields": {
+    "answer": "\u041f\u0435\u043d\u0441\u0438\u043e\u043d\u0435\u0440",
+    "poll": 2
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 11,
+  "fields": {
+    "answer": "\u0414\u0440\u0443\u0433\u043e\u0435",
+    "poll": 2
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 12,
+  "fields": {
+    "answer": "\u041d\u0435\u0439\u0442\u0440\u0430\u043b\u044c\u043d\u043e",
+    "poll": 3
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 13,
+  "fields": {
+    "answer": "\u041f\u043e\u043b\u043e\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e",
+    "poll": 3
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 14,
+  "fields": {
+    "answer": "\u041e\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043b\u044c\u043d\u043e",
+    "poll": 3
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$VIPuuoVd4Gzu$lrv90IcfBqCnD7pnFTDgKci9jgdpO3xqsFCwG5CW/uU=",
+    "last_login": "2019-10-19T05:49:46.895Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-10-19T05:15:56.704Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

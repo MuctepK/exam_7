@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Poll(models.Model):
-    question = models.CharField(max_length=128, verbose_name='Вопрос')
+    question = models.TextField(max_length=256, verbose_name='Вопрос')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
 
     def __str__(self):
@@ -10,5 +10,8 @@ class Poll(models.Model):
 
 
 class Choice(models.Model):
-    answer = models.CharField(max_length=128, verbose_name='Ответ')
+    answer = models.TextField(max_length=128, verbose_name='Ответ')
     poll = models.ForeignKey('webapp.Poll', on_delete=models.CASCADE, related_name='choices')
+
+    def __str__(self):
+        return self.answer[:30]
