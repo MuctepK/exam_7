@@ -1,5 +1,8 @@
-from django.views.generic import ListView, DetailView
+from django.shortcuts import render
+from django.urls import reverse
+from django.views.generic import ListView, DetailView, CreateView
 
+from webapp.forms import PollForm
 from webapp.models import Poll
 
 
@@ -22,3 +25,12 @@ class PollDetailView(DetailView):
         context['choices'] = choices
         return context
 
+
+class PollCreateView(CreateView):
+    template_name = 'create.html'
+    form_class = PollForm
+    model = Poll
+    extra_context = {'title': 'Создание опроса'}
+
+    def get_success_url(self):
+        return reverse('view_poll', kwargs={'pk': self.object.pk})
