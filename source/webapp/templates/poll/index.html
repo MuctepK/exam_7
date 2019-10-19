@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+    <h1>Все опросы</h1>
+    {% for poll in polls %}
+        {% include 'poll/poll_list.html' %}
+    {% endfor %}
+
+{% endblock %}
