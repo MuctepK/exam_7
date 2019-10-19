@@ -8,7 +8,8 @@
                     <p><a href="{% url 'delete_poll' poll.pk %}"><i class="far fa-trash-alt"></i></a></p>
                 </div>
             </div>
-        <div class="d-flex col-12 justify-end">
+        <div class="d-flex col-10 ">
             <p class="ml-auto text mt-5 col-12">Дата создания: {{ poll.created_at|date:'Y-m-d H:i:s' }}</p>
+            <a href="{% url 'create_answer' poll.pk %}">Ответить на этот опрос</a>
         </div>
         </div>

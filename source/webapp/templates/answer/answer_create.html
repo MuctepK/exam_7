@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    <div class="row">
+                <div class="left col-12 d-flex justify-content-center">
+                    <h4>{{ poll.question }}</h4>
+                </div>
+            </div>
+   {% for choice in choices %}
+    <div class="custom-control custom-radio">
+    <input type="radio" class="custom-control-input" id="defaultChecked{{ choice.pk }}"  name="choice_pk" value="{{ choice.pk }}">
+    <label class="custom-control-label" for="defaultChecked{{ choice.pk }}">{{ choice.answer }}</label>
+    </div>
+    {% endfor %}
+    <p class="text-center"><input type="submit" value="Ответить" class="btn btn-primary"></p>
+    </form>
+{% endblock %}
