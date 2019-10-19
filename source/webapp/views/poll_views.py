@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
+from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-
+from collections import Counter
 from webapp.forms import PollForm, ChoiceForm
-from webapp.models import Poll
+from webapp.models import Poll, Answer
 
 
 class PollListView(ListView):
@@ -55,3 +56,15 @@ class PollDeleteView(DeleteView):
     model = Poll
     extra_context = {'title': 'опрос '}
     success_url = reverse_lazy('index')
+
+
+class PollStatistics(View):
+    def get(self, request, *args, **kwargs):
+        poll = Poll.objects.get(pk=kwargs.get('pk'))
+        l = ([value['choice__answer'] for value in Answer.objects.filter(poll=poll).values('choice__answer')])
+        count = dict(Counter(l))
+        print(count)
+        context = {'poll': poll,
+                   'count': count,
+                   'total': len(l)}
+        return render(request, 'poll/stats.html', context=context)

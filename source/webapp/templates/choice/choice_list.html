@@ -8,4 +8,6 @@
                     <p><a href="{% url 'delete_choice' choice.pk %}"><i class="far fa-trash-alt"></i></a></p>
                 </div>
     </div>
+    {% empty %}
+    <h2 class="my-5">К этому опросу еще не добавили ответов...</h2>
 {% endfor %}

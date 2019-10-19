@@ -2,6 +2,9 @@
 {% block menu %}
     <li><a href="{% url 'update_poll' poll.pk %}">Редактировать этот опрос</a></li>
     <li><a href="{% url 'delete_poll' poll.pk %}">Удалить этот опрос</a></li>
+    {% if poll.choices.all %}
+    <li><a href="{% url 'create_answer' poll.pk %}">Ответить на опрос</a></li>
+    {% endif %}
 {% endblock %}
 {% block content %}
     <div class="row">
@@ -11,7 +14,7 @@
             </div>
     {% include 'choice/choice_list.html' %}
         <p class="mt-5">Дата создания: {{ poll.created_at|date:'Y-m-d H:i:s' }}</p>
-    <h2>Добавить вариант ответа</h2>
+    <h2 class="mt-5">Добавить вариант ответа</h2>
     <form method="POST" action="{% url 'create_choice' poll.pk %}">
     {% include 'partial/form.html' with button_text='Добавить' %}
 </form>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Статистика к: </h1>
+    <div class="row">
+                <div class="left col-12 d-flex justify-content-center">
+                    <h2>{{ poll.question }}</h2>
+                </div>
+            </div>
+    <h3>Всего ответов: {{ total }}</h3>
+    <div>
+
+    {% for value, c in count.items %}
+        <h5>
+        За {{ value  }}: {{ c }} ответили раз ({{ total }})
+        </h5>
+    {% endfor %}
+
+    </div>
+
+{% endblock %}

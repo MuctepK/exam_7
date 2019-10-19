@@ -8,8 +8,13 @@
                     <p><a href="{% url 'delete_poll' poll.pk %}"><i class="far fa-trash-alt"></i></a></p>
                 </div>
             </div>
-        <div class="d-flex col-10 ">
-            <p class="ml-auto text mt-5 col-12">Дата создания: {{ poll.created_at|date:'Y-m-d H:i:s' }}</p>
-            <a href="{% url 'create_answer' poll.pk %}">Ответить на этот опрос</a>
+        <div class="d-flex col-12 ">
+            <p class="ml-auto text mt-5 col-4">Дата создания: {{ poll.created_at|date:'Y-m-d H:i:s' }}</p>
+            {% if poll.choices.all %}
+            <a class="mr-auto text mt-5 col-4" href="{% url 'create_answer' poll.pk %}">Ответить на этот опрос</a>
+                <a class="mr-auto text mt-5 col-4" href="{% url 'poll_stats' poll.pk %}">Статистка у этого опроса</a>
+            {% else %}
+                <p class="mr-auto text mt-5 col-8">У этого опроса еще нет ответов</p>
+            {% endif %}
         </div>
         </div>
