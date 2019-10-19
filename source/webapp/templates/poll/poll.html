@@ -11,4 +11,8 @@
             </div>
     {% include 'choice/choice_list.html' %}
         <p class="mt-5">Дата создания: {{ poll.created_at|date:'Y-m-d H:i:s' }}</p>
+    <h2>Добавить вариант ответа</h2>
+    <form method="POST" action="{% url 'create_choice' poll.pk %}">
+    {% include 'partial/form.html' with button_text='Добавить' %}
+</form>
 {% endblock %}

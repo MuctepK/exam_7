@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from webapp.forms import PollForm
+from webapp.forms import PollForm, ChoiceForm
 from webapp.models import Poll
 
 
@@ -26,6 +26,7 @@ class PollDetailView(DetailView):
         poll = self.object
         choices = poll.choices.all()
         context['choices'] = choices
+        context['form'] = ChoiceForm
         return context
 
 
