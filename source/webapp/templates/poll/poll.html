@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block menu %}
-    <li><a href="">Редактировать этот опрос</a></li>
-    <li><a href="">Удалить этот опрос</a></li>
+    <li><a href="{% url 'update_poll' poll.pk %}">Редактировать этот опрос</a></li>
+    <li><a href="{% url 'delete_poll' poll.pk %}">Удалить этот опрос</a></li>
 {% endblock %}
 {% block content %}
     <div class="row">
