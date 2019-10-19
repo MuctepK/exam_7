@@ -1,7 +1,7 @@
 <div class="object">
             <div class="row">
                 <div class="left col-10 d-flex justify-content-center">
-                    <h5><a href="">{{ poll.question }}</a></h5>
+                    <h5><a href="{% url 'view_poll' poll.pk %}">{{ poll.question }}</a></h5>
                 </div>
                 <div class="right col-2 d-flex justify-content-end">
                     <p><a href=""><i class="far fa-edit"></i></a></p>

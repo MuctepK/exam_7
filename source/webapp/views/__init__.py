@@ -1,1 +1,1 @@
-from .poll_views import PollListView
+from .poll_views import PollListView, PollDetailView

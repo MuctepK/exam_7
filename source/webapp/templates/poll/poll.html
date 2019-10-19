@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block menu %}
+    <li><a href="">Редактировать этот опрос</a></li>
+    <li><a href="">Удалить этот опрос</a></li>
+{% endblock %}
+{% block content %}
+    <div class="row">
+                <div class="left col-12 d-flex justify-content-center">
+                    <h5>{{ poll.question }}</h5>
+                </div>
+            </div>
+    {% include 'choice/choice_list.html' %}
+        <p class="mt-5">Дата создания: {{ poll.created_at|date:'Y-m-d H:i:s' }}</p>
+{% endblock %}
